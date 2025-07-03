@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+main {
+  background-color: rgba(20, 20, 40, 0.9);
+  padding: 3rem;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.player {
+  background: linear-gradient(160deg, #1e1e2f, #282847);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+}
+
+.player--active {
+  background: linear-gradient(160deg, #2e2e50, #3f3f7e);
+  border: 2px solid #00ffff;
+  transform: scale(1.03);
+}
+
+h2 {
+  font-size: 2rem;
+  color: #00f0ff;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 5px #00f0ff77;
+}
+
+.score {
+  font-size: 4rem;
+  color: #f9ff00;
+  text-shadow: 0 0 10px #f9ff0070;
+  margin-bottom: 1rem;
+}
+
+.current-label {
+  font-size: 1rem;
+  color: #aaaaaa;
+  margin-top: 1.5rem;
+}
+
+.current-score {
+  font-size: 2.5rem;
+  color: #00e6e6;
+  text-shadow: 0 0 5px #00ffff80;
+}
+
+.dice {
+  grid-column: span 2;
+  width: 120px;
+  margin: 2rem auto 1rem;
+  filter: drop-shadow(0 0 8px #00ffffaa);
+}
+
+.buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+button {
+  background: linear-gradient(145deg, #00f0ff, #008cff);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(145deg, #008cff, #005eff);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffff99;
+}
