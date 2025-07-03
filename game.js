@@ -34,7 +34,7 @@ document.getElementById("btn--hold").addEventListener("click", function () {
   if (scores[activePlayer] >= 100) {
     playing = false;
     document.querySelector(`.player--${activePlayer}`).style.background =
-      "#28a745";
+      "linear-gradient(to right,rgb(23, 213, 48),rgb(6, 83, 13))";
     diceEl.style.display = "none";
   } else {
     switchPlayer();
