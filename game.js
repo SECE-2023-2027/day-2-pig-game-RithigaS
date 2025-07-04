@@ -1,4 +1,5 @@
-const scores = [0, 0];
+let score0 = 0;
+let score1 = 0;
 let currentScore = 0;
 let activePlayer = 0;
 let playing = true;
@@ -27,17 +28,26 @@ document.getElementById("btn--roll").addEventListener("click", function () {
 
 document.getElementById("btn--hold").addEventListener("click", function () {
   if (!playing) return;
-  scores[activePlayer] += currentScore;
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
 
-  if (scores[activePlayer] >= 100) {
-    playing = false;
-    document.querySelector(`.player--${activePlayer}`).style.background =
-      "linear-gradient(to right,rgb(23, 213, 48),rgb(6, 83, 13))";
-    diceEl.style.display = "none";
-  } else {
-    switchPlayer();
+  switch (activePlayer) {
+    case 0:
+      score0 += currentScore;
+      score0El.textContent = score0;
+      if (score0 >= 100) {
+        endGame(0);
+      } else {
+        switchPlayer();
+      }
+      break;
+    case 1:
+      score1 += currentScore;
+      score1El.textContent = score1;
+      if (score1 >= 100) {
+        endGame(1);
+      } else {
+        switchPlayer();
+      }
+      break;
   }
 });
 
@@ -51,9 +61,16 @@ function switchPlayer() {
   player1El.classList.toggle("player--active");
 }
 
+function endGame(winner) {
+  playing = false;
+  document.querySelector(`.player--${winner}`).style.background =
+    "linear-gradient(to right,rgb(23, 213, 48),rgb(6, 83, 13))";
+  diceEl.style.display = "none";
+}
+
 function init() {
-  scores[0] = 0;
-  scores[1] = 0;
+  score0 = 0;
+  score1 = 0;
   currentScore = 0;
   activePlayer = 0;
   playing = true;
